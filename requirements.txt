@@ -1,0 +1,5 @@
+requests
+tqdm
+pillow
+bs4
+lxml
