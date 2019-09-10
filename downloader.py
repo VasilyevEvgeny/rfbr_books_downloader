@@ -23,6 +23,7 @@ class RFBRBooksDownloader:
     def __create_res_dir(self):
         if os.path.exists(self.__res_dir):
             shutil.rmtree(self.__res_dir)
+            sleep(1.0)
         os.mkdir(self.__res_dir)
 
     def __get_work_url_from_initial_url(self):
@@ -68,7 +69,7 @@ class RFBRBooksDownloader:
         images = []
         for page in tqdm(range(self.__get_max_page() + 1), desc='downloading'):
             current_url = self.__generate_url_for_current_page(self.__work_url, page)
-            image_name = self.__res_dir + '/%03d.' % page + self.__ext
+            image_name = self.__res_dir + '/%04d.' % page + self.__ext
             images.append(image_name)
             with open(image_name, 'wb') as f:
                 content = requests.get(current_url).content
