@@ -24,7 +24,7 @@ pip install -r <path_to_project>/requirements.txt
 * Copy link and create instance of `RFBRBooksDownloader` with at least link you copied, then process it:
 
 ```python
-from dowloader import RFBRBooksDownloader
+from downloader import RFBRBooksDownloader
 
 obj = RFBRBooksDownloader(book_url=...)
 obj.process()
